@@ -217,13 +217,6 @@ Install_RPM_Pack(){
 	if [ "$isExc" = "" ];then
 		echo "exclude=httpd nginx php mysql mairadb python-psutil python2-psutil" >> $yumPath
 	fi
-
-	#SYS_TYPE=$(uname -a|grep x86_64)
-	#yumBaseUrl=$(cat /etc/yum.repos.d/CentOS-Base.repo|grep baseurl=http|cut -d '=' -f 2|cut -d '$' -f 1|head -n 1)
-	#[ "${yumBaseUrl}" ] && checkYumRepo=$(curl --connect-timeout 5 --head -s -o /dev/null -w %{http_code} ${yumBaseUrl})	
-	#if [ "${checkYumRepo}" != "200" ] && [ "${SYS_TYPE}" ];then
-	#	curl -Ss --connect-timeout 3 -m 60 https://raw.kgithub.com/v2jun/bt-panel/master/bt_7.7/install/yumRepo_select.sh|bash
-	#fi
 	
 	#尝试同步时间(从bt.cn)
 	echo 'Synchronizing system time...'
@@ -356,7 +349,7 @@ Get_Versions(){
 	fi
 }
 Install_Python_Lib(){
-	curl -Ss --connect-timeout 3 -m 60 https://raw.kgithub.com/v2jun/bt-panel/master/bt_7.7/install/pip_select.sh|bash
+	curl -Ss --connect-timeout 3 -m 60 https://raw.kgithub.com/v2jun/bt-panel/master/bt_7.7/install/src/pip_select.sh|bash
 	pyenv_path="/www/server/panel"
 	if [ -f $pyenv_path/pyenv/bin/python ];then
 	 	is_ssl=$($python_bin -c "import ssl" 2>&1|grep cannot)
@@ -490,7 +483,7 @@ Install_Bt(){
 	fi
 
 	wget -O /etc/init.d/bt https://raw.kgithub.com/v2jun/bt-panel/master/bt_7.7/install/src/bt6.init -T 10
-	wget -O /www/server/panel/install/public.sh https://raw.kgithub.com/v2jun/bt-panel/master/bt_7.7/install/public.sh -T 10
+	wget -O /www/server/panel/install/public.sh https://raw.kgithub.com/v2jun/bt-panel/master/bt_7.7/install/src/public.sh -T 10
 	wget -O panel.zip https://raw.kgithub.com/v2jun/bt-panel/master/bt_7.7/install/src/panel6.zip -T 10
 
 	if [ -f "${setup_path}/server/panel/data/default.db" ];then
