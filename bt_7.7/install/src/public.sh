@@ -149,9 +149,9 @@ if [ -d "/www/server/phpmyadmin/pma" ];then
 	rm -rf /www/server/phpmyadmin/pma
 	EN_CHECK=$(cat /www/server/panel/config/config.json |grep English)
 	if [ "${EN_CHECK}" ];then
-		curl https://raw.githubusercontent.com/elunez/other_script/master/btpanel-v7.7.0/install/update6_en.sh|bash
+		curl https://raw.githubusercontent.com/elunez/other_script/main/btpanel-v7.7.0/install/update6_en.sh|bash
 	else
-		curl https://raw.githubusercontent.com/elunez/other_script/master/btpanel-v7.7.0/install/update6.sh|bash
+		curl https://raw.githubusercontent.com/elunez/other_script/main/btpanel-v7.7.0/install/update6.sh|bash
 	fi
 	echo > /www/server/panel/data/restart.pl
 fi

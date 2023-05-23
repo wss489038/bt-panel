@@ -11,7 +11,7 @@
 
 -   修改下载节点为官方节点
 
--   修改 github 代理地址为 [kgithub](https://help.kgithub.com//?spm=a2c6h.12873639.article-detail.4.64f8971cLiNVSm)
+-   取消文件代理，采用官方链接
 
     
 

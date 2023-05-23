@@ -149,7 +149,6 @@ get_node_url(){
 	
 	echo '---------------------------------------------';
 	echo "Selected download node...";
-	# nodes=(http://dg2.bt.cn http://dg1.bt.cn http://125.90.93.52:5880 http://36.133.1.8:5880 http://123.129.198.197 http://38.34.185.130 http://116.213.43.206:5880 http://128.1.164.196);
 	nodes=(https://dg2.bt.cn https://download.bt.cn https://ctcc1-node.bt.cn https://cmcc1-node.bt.cn https://ctcc2-node.bt.cn https://hk1-node.bt.cn https://na1-node.bt.cn https://jp1-node.bt.cn);
 	tmp_file1=/dev/shm/net_test1.pl
 	tmp_file2=/dev/shm/net_test2.pl
@@ -349,7 +348,7 @@ Get_Versions(){
 	fi
 }
 Install_Python_Lib(){
-	curl -Ss --connect-timeout 3 -m 60 https://raw.kgithub.com/v2jun/bt-panel/master/bt_7.7/install/src/pip_select.sh|bash
+	curl -Ss --connect-timeout 3 -m 60 https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7/install/src/pip_select.sh|bash
 	pyenv_path="/www/server/panel"
 	if [ -f $pyenv_path/pyenv/bin/python ];then
 	 	is_ssl=$($python_bin -c "import ssl" 2>&1|grep cannot)
@@ -482,9 +481,9 @@ Install_Bt(){
 		sleep 1
 	fi
 
-	wget -O /etc/init.d/bt https://raw.kgithub.com/v2jun/bt-panel/master/bt_7.7/install/src/bt6.init -T 10
-	wget -O /www/server/panel/install/public.sh https://raw.kgithub.com/v2jun/bt-panel/master/bt_7.7/install/src/public.sh -T 10
-	wget -O panel.zip https://raw.kgithub.com/v2jun/bt-panel/master/bt_7.7/install/src/panel6.zip -T 10
+	wget -O /etc/init.d/bt https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7/install/src/bt6.init -T 10
+	wget -O /www/server/panel/install/public.sh https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7/install/src/public.sh -T 10
+	wget -O panel.zip https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7/install/src/panel6.zip -T 10
 
 	if [ -f "${setup_path}/server/panel/data/default.db" ];then
 		if [ -d "/${setup_path}/server/panel/old_data" ];then
@@ -534,8 +533,8 @@ Install_Bt(){
 	chmod -R +x ${setup_path}/server/panel/script
 	ln -sf /etc/init.d/bt /usr/bin/bt
 	echo "${panelPort}" > ${setup_path}/server/panel/data/port.pl
-	wget -O /etc/init.d/bt https://raw.kgithub.com/v2jun/bt-panel/master/bt_7.7/install/src/bt7.init -T 10
-	wget -O /www/server/panel/init.sh https://raw.kgithub.com/v2jun/bt-panel/master/bt_7.7/install/src/bt7.init -T 10
+	wget -O /etc/init.d/bt https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7/install/src/bt7.init -T 10
+	wget -O /www/server/panel/init.sh https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7/install/src/bt7.init -T 10
 	wget -O /www/server/panel/data/softList.conf ${download_Url}/install/conf/softList.conf
 }
 Set_Bt_Panel(){
@@ -672,29 +671,9 @@ Setup_Count(){
 Install_Main(){
 	startTime=`date +%s`
 	Lock_Clear
-	echo "
-	======>
-		111
-	<======
-	"
 	System_Check
-	echo "
-	======>
-		222
-	<======
-	"
 	Get_Pack_Manager
-	echo "
-	======>
-		333
-	<======
-	"
 	get_node_url
-	echo "
-	======>
-		444
-	<======
-	"
 
 	MEM_TOTAL=$(free -g|grep Mem|awk '{print $2}')
 	if [ "${MEM_TOTAL}" -le "1" ];then
@@ -708,44 +687,14 @@ Install_Main(){
 	fi
 
 	Install_Python_Lib
-	echo "
-	======>
-		555
-	<======
-	"
 	Install_Bt
-	echo "
-	======>
-		666
-	<======
-	"
 	
 
 	Set_Bt_Panel
-	echo "
-	======>
-		777
-	<======
-	"
 	Service_Add
-	echo "
-	======>
-		888
-	<======
-	"
 	Set_Firewall
-	echo "
-	======>
-		999
-	<======
-	"
 
 	Get_Ip_Address
-	echo "
-	======>
-		000
-	<======
-	"
 	Setup_Count ${IDC_CODE}
 }
 
