@@ -7,7 +7,7 @@
 ps：本脚本仅用于 7.7 版本宝塔的优化，不保证对其他版本兼容性。非 7.7 版本使用请自行做好备份
 
 ```bash
-wget -O crack.sh https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_crack/crack.sh && chmod +x crack.sh && ./crack.sh
+wget -O crack.sh https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7_crack/crack.sh && chmod +x crack.sh && ./crack.sh
 ```
 
 ```

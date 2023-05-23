@@ -12,14 +12,17 @@ ps：后续使用，安装运行环境等依旧需要联网
 
 3、执行安装脚本
 
-```
-
+```shell
+bash install.sh
 ```
 
 4、执行优化脚本
 
 ```
-
+# 赋予可执行权限,仅第一次需要
+chmod +x crack.sh
+# 执行优化
+bash crack.sh
 ```
 
 附：[宝塔 Linux 命令指南](https://www.bt.cn/new/btcode.html)
