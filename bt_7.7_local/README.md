@@ -35,7 +35,7 @@ cd /bt_7.7_local/crack && chmod +x crack.sh && bash crack.sh
 5、删除相关文件(可选)
 
 ```shell
-rm -f /bt_7.7_local
+rm -rf /bt_7.7_local
 ```
 
 附：[宝塔 Linux 命令指南](https://www.bt.cn/new/btcode.html)

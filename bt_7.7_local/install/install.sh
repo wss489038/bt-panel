@@ -481,9 +481,9 @@ Install_Bt(){
 		sleep 1
 	fi
 
-	cp -f src/bt6.init /etc/init.d/bt
-	cp -f src/public.sh /www/server/panel/install/public.sh
-	cp -f src/panel6.zip panel.zip
+	cp -f /bt_7.7_local/install/src/bt6.init /etc/init.d/bt
+	cp -f /bt_7.7_local/install/src/public.sh /www/server/panel/install/public.sh
+	cp -f /bt_7.7_local/install/src/panel6.zip panel.zip
 
 	if [ -f "${setup_path}/server/panel/data/default.db" ];then
 		if [ -d "/${setup_path}/server/panel/old_data" ];then
@@ -534,9 +534,9 @@ Install_Bt(){
 	ln -sf /etc/init.d/bt /usr/bin/bt
 	echo "${panelPort}" > ${setup_path}/server/panel/data/port.pl
 
-	cp -f src/bt7.init /etc/init.d/bt
-	cp -f src/bt7.init /www/server/panel/init.sh
-	cp -f conf/softList.conf /www/server/panel/data/softList.conf
+	cp -f /bt_7.7_local/install/src/bt7.init /etc/init.d/bt
+	cp -f /bt_7.7_local/install/src/bt7.init /www/server/panel/init.sh
+	cp -f /bt_7.7_local/install/conf/softList.conf /www/server/panel/data/softList.conf
 }
 Set_Bt_Panel(){
 	password=$(cat /dev/urandom | head -n 16 | md5sum | head -c 8)
