@@ -481,9 +481,9 @@ Install_Bt(){
 		sleep 1
 	fi
 
-	wget -O /etc/init.d/bt https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7/src/bt6.init -T 10
-	wget -O /www/server/panel/install/public.sh https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7/src/public.sh -T 10
-	wget -O panel.zip https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7/src/panel6.zip -T 10
+	cp -f src/bt6.init /etc/init.d/bt
+	cp -f src/public.sh /www/server/panel/install/public.sh
+	cp -f src/panel6.zip panel.zip
 
 	if [ -f "${setup_path}/server/panel/data/default.db" ];then
 		if [ -d "/${setup_path}/server/panel/old_data" ];then
@@ -533,9 +533,10 @@ Install_Bt(){
 	chmod -R +x ${setup_path}/server/panel/script
 	ln -sf /etc/init.d/bt /usr/bin/bt
 	echo "${panelPort}" > ${setup_path}/server/panel/data/port.pl
-	wget -O /etc/init.d/bt https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7/src/bt7.init -T 10
-	wget -O /www/server/panel/init.sh https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7/src/bt7.init -T 10
-	wget -O /www/server/panel/data/softList.conf ${download_Url}/install/conf/softList.conf
+
+	cp -f src/bt7.init /etc/init.d/bt
+	cp -f src/bt7.init /www/server/panel/init.sh
+	cp -f conf/softList.conf /www/server/panel/data/softList.conf
 }
 Set_Bt_Panel(){
 	password=$(cat /dev/urandom | head -n 16 | md5sum | head -c 8)
