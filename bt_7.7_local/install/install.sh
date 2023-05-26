@@ -484,7 +484,7 @@ Install_Bt(){
 	cp -f /bt_7.7_local/install/src/bt6.init /etc/init.d/bt
 	cp -f /bt_7.7_local/install/src/public.sh /www/server/panel/install/public.sh
 	cp -f /bt_7.7_local/install/src/panel6.zip panel.zip
-
+	
 	if [ -f "${setup_path}/server/panel/data/default.db" ];then
 		if [ -d "/${setup_path}/server/panel/old_data" ];then
 			rm -rf ${setup_path}/server/panel/old_data
