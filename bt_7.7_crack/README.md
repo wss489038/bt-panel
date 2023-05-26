@@ -32,6 +32,8 @@ wget -O crack.sh https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7_cr
 
 ###### 1、企业版插件 - 企业级备份，不要装该插件，安装后打开有可能会自动修复环境，导致优化失败
 
+ps：其他插件自测，收费插件安装前建议快照备份，以防万一
+
 ###### 2、专业版插件 - Nginx防火墙，安装后在侧边栏打开会提醒 `APP被您禁用啦`，修复方法：
 
 ```js
