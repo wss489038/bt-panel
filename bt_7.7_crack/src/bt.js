@@ -93,9 +93,9 @@ if("undefined" != typeof site && site.hasOwnProperty("del_site")){
                 '<i class="layui-layer-ico layui-layer-ico0"></i>' +
                 "<div class=\'f13 check_title\'>是否要删除关联的FTP、数据库、站点目录！</div>" +
                 "<div class=\"check_type_group\">" +
-                "<label><input type=\"checkbox\" name=\"ftp\"><span>FTP</span></label>" +
-                "<label><input type=\"checkbox\" name=\"database\"><span>数据库</span>"+ (!recycle_bin_db_open?'<span class="glyphicon glyphicon-info-sign" style="color: red"></span>':'') +"</label>" +
-                "<label><input type=\"checkbox\"  name=\"path\"><span>站点目录</span>"+ (!recycle_bin_open?'<span class="glyphicon glyphicon-info-sign" style="color: red"></span>':'') +"</label>" +
+                "<label><input type=\"checkbox\" name=\"ftp\" checked><span>FTP</span></label>" +
+                "<label><input type=\"checkbox\" name=\"database\" checked><span>数据库</span>"+ (!recycle_bin_db_open?'<span class="glyphicon glyphicon-info-sign" style="color: red"></span>':'') +"</label>" +
+                "<label><input type=\"checkbox\"  name=\"path\" checked><span>站点目录</span>"+ (!recycle_bin_open?'<span class="glyphicon glyphicon-info-sign" style="color: red"></span>':'') +"</label>" +
                 "</div>"+
                 "</div>",
             btn:[lan.public.ok,lan.public.cancel],
