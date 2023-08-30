@@ -12,7 +12,7 @@ Centos/Ubuntu/Debian 安装命令 独立运行环境(py3.7)
 
 
 ```Bash
-curl -sSO https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7/install.sh && bash install.sh
+curl -sSO https://raw.githubusercontent.com/wss489038/bt-panel/main/bt_7.7/install.sh && bash install.sh
 ```
 
 ```
