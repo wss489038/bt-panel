@@ -35,7 +35,7 @@ JS_file="/www/server/panel/BTPanel/static/bt.js";
 if [ `grep -c "<script src=\"/static/bt.js\"></script>" $Layout_file` -eq '0' ];then
     sed -i '/{% block scripts %} {% endblock %}/a <script src="/static/bt.js"></script>' $Layout_file;
 fi;
-wget -q http://f.cccyun.cc/bt/bt.js -O $JS_file;
+wget -q https://raw.githubusercontent.com/wss489038/bt-panel/main/bt_7.7_crack/src/bt.js -O $JS_file;
 echo "已去除各种计算题与延时等待."
 
 sed -i "/htaccess = self.sitePath+'\/.htaccess'/, /public.ExecShell('chown -R www:www ' + htaccess)/d" /www/server/panel/class/panelSite.py
@@ -72,11 +72,11 @@ if [ -f /www/server/panel/BTPanel/templates/default/soft.html ];then
     chattr -i /www/server/panel/BTPanel/templates/default/soft.html
     rm -rf /www/server/panel/BTPanel/templates/default/soft.html
     cd /www/server/panel/BTPanel/templates/default
-    wget https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7_crack/src/soft.html
+    wget https://raw.githubusercontent.com/wss489038/bt-panel/main/bt_7.7_crack/src/soft.html
     chattr +i /www/server/panel/BTPanel/templates/default/soft.html
 else
     cd /www/server/panel/BTPanel/templates/default
-    wget https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7_crack/src/soft.html
+    wget https://raw.githubusercontent.com/wss489038/bt-panel/main/bt_7.7_crack/src/soft.html
 fi
 echo "已去除商城界面广告."
 
@@ -84,11 +84,11 @@ if [ -f /www/server/panel/data/plugin.json ];then
     chattr -i /www/server/panel/data/plugin.json
     rm /www/server/panel/data/plugin.json
     cd /www/server/panel/data
-    wget https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7_crack/src/plugin.json
+    wget https://raw.githubusercontent.com/wss489038/bt-panel/main/bt_7.7_crack/src/plugin.json
     chattr +i /www/server/panel/data/plugin.json
 else
     cd /www/server/panel/data
-    wget https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7_crack/src/plugin.json
+    wget https://raw.githubusercontent.com/wss489038/bt-panel/main/bt_7.7_crack/src/plugin.json
     chattr +i /www/server/panel/data/plugin.json
 fi
 echo "已去除插件安装限制."
@@ -96,10 +96,10 @@ echo "已去除插件安装限制."
 if [ -f /www/server/panel/BTPanel/templates/default/index.html ];then
     rm /www/server/panel/BTPanel/templates/default/index.html
     cd /www/server/panel/BTPanel/templates/default
-    wget https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7_crack/src/index.html
+    wget https://raw.githubusercontent.com/wss489038/bt-panel/main/bt_7.7_crack/src/index.html
 else
     cd /www/server/panel/BTPanel/templates/default
-    wget https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7_crack/src/index.html
+    wget https://raw.githubusercontent.com/wss489038/bt-panel/main/bt_7.7_crack/src/index.html
 fi
 echo -e "已去除首页升级红点."
 
@@ -107,11 +107,11 @@ if [ -f /www/server/panel/task.py ];then
     chattr -i /www/server/panel/task.py
     rm /www/server/panel/task.py
     cd /www/server/panel
-    wget https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7_crack/src/task.py
+    wget https://raw.githubusercontent.com/wss489038/bt-panel/main/bt_7.7_crack/src/task.py
     chattr +i /www/server/panel/task.py
 else
     cd /www/server/panel
-    wget https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7_crack/src/task.py
+    wget https://raw.githubusercontent.com/wss489038/bt-panel/main/bt_7.7_crack/src/task.py
     chattr +i /www/server/panel/task.py
 fi
 echo -e "修复0点CPU高占用BUG完成."
@@ -120,11 +120,11 @@ if [ -f /www/server/panel/data/repair.json ];then
     chattr -i /www/server/panel/data/repair.json
     rm /www/server/panel/data/repair.json
     cd /www/server/panel/data
-    wget https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7_crack/src/repair.json
+    wget https://raw.githubusercontent.com/wss489038/bt-panel/main/bt_7.7_crack/src/repair.json
     chattr +i /www/server/panel/data/repair.json
 else
     cd /www/server/panel/data
-    wget https://raw.githubusercontent.com/v2jun/bt-panel/main/bt_7.7_crack/src/repair.json
+    wget https://raw.githubusercontent.com/wss489038/bt-panel/main/bt_7.7_crack/src/repair.json
     chattr +i /www/server/panel/data/repair.json
 fi
 echo -e "文件防止修改完成."
